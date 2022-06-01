@@ -1,1 +1,1 @@
-<img src="images/logo-magic-the-matching.png" alt="">
+<img class="object-contain h-12" src="css/images/logo-senseki.png" alt="">
