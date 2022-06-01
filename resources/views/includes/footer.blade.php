@@ -1,1 +1,0 @@
-<p>Theis is footer</p>
