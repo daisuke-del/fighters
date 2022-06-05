@@ -23,6 +23,6 @@ Route::get('/dashboard', function () {
 
 Route::get('/top', function () {
     return view('top');
-});
+})->name('top');
 
 require __DIR__.'/auth.php';
