@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
-            $table->id(); // primary key
-            $table->integer('room_id', 100)->unsigned()->nullable(false); // in room
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();//primary key
+            $table->intenger('room')->unsigned()->nullable(false); //belong to room
+            $table->string('name')->nullable(false)->default('nanashi'); // user name
+            $table->string('img')->nullable(false)->default('default_img.jpg'); // user profile image
             $table->foreign('room_id')->references('room_id')->on('rooms'); 
-            $table->integer('winner', 255)->nullable(false); // win user's id
-            $table->foreign('id')->references('id')->on('users');
-            $table->integer('loser', 255)->nullable(false); // lose user's id
-            $table->foreign('id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('logs');
+        Schema::dropIfExists('users');
     }
 };

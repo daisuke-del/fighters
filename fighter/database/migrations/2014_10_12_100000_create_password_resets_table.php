@@ -13,22 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rooms', function (Blueprint $table) {
-
-            $table->integer('room_id', 100)->unsigned()->nullable(false)->primary(); //room id
-            $table->string('password',255)->nullable(false); //password
-            $table->timestamps();
-
+        Schema::create('password_resets', function (Blueprint $table) {
+            $table->string('email')->index();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
         });
     }
 
     /**
      * Reverse the migrations.
      *
-     * @return void_
+     * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('rooms');
+        Schema::dropIfExists('password_resets');
     }
 };
