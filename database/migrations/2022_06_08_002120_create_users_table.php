@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();//primary key
-            $table->intenger('room')->unsigned()->nullable(false); //belong to room
+            $table->integer('room')->unsigned()->nullable(false); //belong to room
             $table->string('name')->nullable(false)->default('nanashi'); // user name
             $table->string('img')->nullable(false)->default('default_img.jpg'); // user profile image
-            $table->foreign('room_id')->references('room_id')->on('rooms'); 
+            //$table->foreign('room_id')->references('room_id')->on('rooms'); 
             $table->timestamps();
         });
     }

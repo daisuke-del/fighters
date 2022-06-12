@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->id(); // primary key
             $table->integer('room_id', 100)->unsigned()->nullable(false); // in room
-            $table->foreign('room_id')->references('room_id')->on('rooms'); 
+            //$table->foreign('room_id')->references('room_id')->on('rooms'); 
             $table->integer('winner', 255)->nullable(false); // win user's id
-            $table->foreign('id')->references('id')->on('users');
+            //$table->foreign('id')->references('id')->on('users');
             $table->integer('loser', 255)->nullable(false); // lose user's id
-            $table->foreign('id')->references('id')->on('users');
+            //$table->foreign('id')->references('id')->on('users');
             $table->timestamps();
         });
     }
