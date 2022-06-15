@@ -13,16 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/** 
 Route::get('/', function () {
     return view('welcome');
 });
+*/
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/top', function () {
+Route::get('/', function () {
     return view('top');
 })->name('top');
+
+Route::post('/room', \App\Http\Controllers\Room\IndexController::class)
+->name('room');
+
+/** 
+Route::get('room-register', \App\Http\Controllers\Room\RoomRegister::class)
+->name('room-register');
+*/
 
 require __DIR__.'/auth.php';

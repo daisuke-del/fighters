@@ -11,7 +11,7 @@ class Room extends Model
 
     protected $primaryKey = 'room_id';
     
-   public $incremmenting = false;
+    public $incremmenting = false;
 
     /**
      * The attributes that are mass assignable.
