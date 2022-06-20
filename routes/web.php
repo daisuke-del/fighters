@@ -27,12 +27,11 @@ Route::get('/', function () {
     return view('top');
 })->name('top');
 
-Route::post('/room', \App\Http\Controllers\Room\IndexController::class)
+Route::post('/room', [\App\Http\Controllers\Room\IndexController::class, 'roomExist'])
 ->name('room');
 
-/** 
-Route::get('room-register', \App\Http\Controllers\Room\RoomRegister::class)
+
+Route::get('/room-register', [\App\Http\Controllers\Room\RoomRegister::class, 'passwordRegister'])
 ->name('room-register');
-*/
 
 require __DIR__.'/auth.php';

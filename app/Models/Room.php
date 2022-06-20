@@ -19,6 +19,6 @@ class Room extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'password'
+        'room_id','password'
     ];
 }
