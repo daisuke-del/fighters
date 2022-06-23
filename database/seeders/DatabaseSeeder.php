@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        \App\Models\Room::factory(10)->create();
+        $this->call(UserSeeder::class);
+        $this->call(LogsSeeder::class);
+        $this->call(RoomsSeeder::class);
     }
 }

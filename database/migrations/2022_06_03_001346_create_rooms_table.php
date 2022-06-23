@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
 
-            $table->integer('room_id', 100)->unsigned()->nullable(false)->primary(); //room id
+            $table->string('room_id', 100)->nullable(false)->primary(); //room id
             $table->string('password',255)->nullable(false); //password
             $table->timestamps();
 
@@ -25,7 +25,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      *
-     * @return void_
+     * @return void
      */
     public function down()
     {

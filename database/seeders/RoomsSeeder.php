@@ -16,6 +16,23 @@ class RoomsSeeder extends Seeder
      */
     public function run()
     {
+        $room = [
+            'room_id' => '1353',
+            'password' => '1111',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ];
+        \Illuminate\Support\Facades\DB::table('rooms')->insert($room);
+
+        $room2 = [
+            'room_id' => '3543',
+            'password' => '1111',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ];
+        \Illuminate\Support\Facades\DB::table('rooms')->insert($room2);
+
+
         Room::factory()->count(10)->create();
     }
 }
