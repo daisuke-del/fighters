@@ -31,4 +31,8 @@ Route::get('/dashboard', function () {
 //test
 Route::resource('/user', 'App\Http\Controllers\UserController');
 
+Route::get('/sample',function (){
+    return view('sample');
+});
+
 require __DIR__.'/auth.php';
